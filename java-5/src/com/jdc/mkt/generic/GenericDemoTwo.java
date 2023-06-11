@@ -32,6 +32,25 @@ class Container<K,V> implements Pair<K,V>{
 	}	
 }
 
+class Test implements Pair<Integer,String>{
+
+	@Override
+	public void setKey(Integer k) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setValue(String v) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public String getPair() {
+		// TODO Auto-generated method stub
+		return null;
+	}}
 
 interface Pair<K,V>{
 	void setKey(K k);

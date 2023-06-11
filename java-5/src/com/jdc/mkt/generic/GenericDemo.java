@@ -5,7 +5,7 @@ public class GenericDemo {
 	public static void main(String[] args) {
 		
 		Data<String> d1 = new Data<>();
-		d1.setValue("Hello");
+		//d1.setValue("Hello");
 		System.out.println(d1.getValue());
 		
 		Data<Integer> d2 = new Data<>();
