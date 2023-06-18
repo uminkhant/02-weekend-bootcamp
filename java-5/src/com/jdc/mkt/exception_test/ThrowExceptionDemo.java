@@ -4,7 +4,7 @@ package com.jdc.mkt.exception_test;
 public class ThrowExceptionDemo {
 
 	public static void main(String[] args) {
-		setName("as sdfsd",-1);
+		setName("aswerqertwer sdfsd",-1);
 	}
 	
 	static void setName(String name, int age) {
