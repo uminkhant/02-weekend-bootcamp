@@ -15,11 +15,12 @@ import com.jdc.mkt.set.SetInterfaceDemo;
 @TestMethodOrder(OrderAnnotation.class)
 public class SetTest {
 
-	private static SetInterfaceDemo demo;
+	 static SetInterfaceDemo demo;
 	
 	@BeforeAll
 	static void create() {
-		demo = new SetInterfaceDemo("hash");
+		demo = new SetInterfaceDemo("tree");
+		
 	}
 	
 	@Test

@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+@SuppressWarnings("unused")
 public class TryCatchDemo {
 
 	static String arr[] = new String[0];
@@ -36,6 +37,7 @@ public class TryCatchDemo {
 		}
 	}
 	
+	@SuppressWarnings("null")
 	static void tryCatchFinally() {
 		class Hello{
 			void show() {}

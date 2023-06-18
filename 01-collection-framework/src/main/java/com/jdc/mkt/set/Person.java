@@ -22,6 +22,21 @@ public class Person {
 	public void setAge(int age) {
 		this.age = age;
 	}
+//	@Override
+//	public int compareTo(Person p) {
+//		return name.compareTo(p.getName());
+//		
+//	}
+//	@Override
+//	public int compareTo(Person p) {
+//		
+//		if(age > p.getAge()) {
+//			return 1;
+//		}
+//		return -1;
+//	}
 	
 	
 }
+
+
