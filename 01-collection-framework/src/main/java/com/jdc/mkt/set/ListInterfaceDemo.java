@@ -17,6 +17,7 @@ public class ListInterfaceDemo {
 	}
 	
 	public void addList(String...strs) {
+		
 		list.addAll(List.of(strs));
 	}
 	
