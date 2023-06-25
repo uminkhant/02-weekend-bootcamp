@@ -55,10 +55,22 @@ public class DateTest {
 		System.out.println(cl.getTime());
 	}
 	
+	@Test
+	@Order(4)
+	void testSimpleDateFormat() throws ParseException {
+		var df = new SimpleDateFormat("yyMMdd  hh:mm a");
+		var date = df.parse("880211  02:30 PM");
+		System.out.println(date);
+	}
 	
 	
 	
 	
+	
+	
+	
+	
+
 	
 	
 	
