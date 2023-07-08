@@ -30,12 +30,6 @@ public class DateTimeFormatTest {
 		var dateTime = LocalDateTime.now();
 		var fDate = dateTime.format(df);
 		System.out.println(fDate);
-	}
-	
-	
-	
-	
-	
-	
+	}	
 	
 }
