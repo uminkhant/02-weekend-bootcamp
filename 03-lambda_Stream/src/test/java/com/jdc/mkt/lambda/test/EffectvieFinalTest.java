@@ -1,4 +1,4 @@
-package com.jdc.mkt.test;
+package com.jdc.mkt.lambda.test;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;

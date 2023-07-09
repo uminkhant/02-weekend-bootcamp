@@ -1,4 +1,4 @@
-package com.jdc.mkt.test;
+package com.jdc.mkt.lambda.test;
 
 import org.junit.jupiter.api.Test;
 
@@ -25,12 +25,8 @@ public class MethodReferenceTest {
 		
 		//constructor reference
 		MyInter inter4 =Demo::new;
-		inter4.show("Aung Aung", "9/rer/232342");
+		inter4.show("Aung Aung", "9/rer/232342");	
 		
 	}
-	
-	
-	
-	
 	
 }

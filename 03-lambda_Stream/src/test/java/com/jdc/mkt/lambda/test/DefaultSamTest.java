@@ -1,4 +1,4 @@
-package com.jdc.mkt.test;
+package com.jdc.mkt.lambda.test;
 
 import java.util.function.BiPredicate;
 import java.util.function.Consumer;
