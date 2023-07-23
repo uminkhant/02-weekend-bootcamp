@@ -40,8 +40,10 @@ public class PersonTest {
 	void test1(String name, int age) {
 		try (Connection con = DriverManager.getConnection(URL, USER, PASSWORD);
 				Statement stmt = con.createStatement()) {
+			
 			int i = stmt.executeUpdate(String.
 					format("insert into person (name,age) values ('%s',%d)", name, age));
+			
 			assertEquals(1, i);
 
 		} catch (Exception e) {

@@ -3,7 +3,7 @@ package com.jdc.mkt.dao;
 import com.jdc.mkt.dto.Category;
 import static com.jdc.mkt.utils.PosConnection.getConnection;
 
-import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,10 +12,11 @@ public class CategoryDao implements UpdateServices<Category>, ReferenceServices<
 	@Override
 	public int insert(Category c) {
 		String sql = "insert into category (name) values (?)";
-		try (var con = getConnection(); var stmt = con.prepareStatement(sql)) {
+		try (var con = getConnection(); var stmt = con.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS)) {
 
 			stmt.setString(1, c.getName());
-			return stmt.executeUpdate();
+			
+			return 0;
 
 		} catch (Exception e) {
 			e.printStackTrace();
