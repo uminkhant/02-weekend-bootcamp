@@ -15,8 +15,12 @@ public class CategoryDao implements UpdateServices<Category>, ReferenceServices<
 		try (var con = getConnection(); var stmt = con.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS)) {
 
 			stmt.setString(1, c.getName());
+			stmt.executeUpdate();
 			
-			return 0;
+			var rs = stmt.getGeneratedKeys();
+			while(rs.next()) {
+				return rs.getInt(1);
+			}
 
 		} catch (Exception e) {
 			e.printStackTrace();

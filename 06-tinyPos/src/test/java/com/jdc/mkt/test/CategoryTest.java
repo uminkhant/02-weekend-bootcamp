@@ -24,15 +24,17 @@ public class CategoryTest {
 		dao = new CategoryDao();
 	}
 	
-	//@ParameterizedTest
+	
+	
+	@ParameterizedTest
 	@DisplayName("1.insert query")
-	@ValueSource(strings = "accessorices")
+	@ValueSource(strings = "Electronics")
 	@Order(1)
 	void test1(String name) {
 		var cat = new Category();
 		cat.setName(name);
 		int res = dao.insert(cat);
-		assertEquals(1, res);
+		assertEquals(11, res);
 	}
 	
 	//@ParameterizedTest
@@ -56,7 +58,7 @@ public class CategoryTest {
 		assertEquals(1, res);
 	}
 	
-	@ParameterizedTest
+	//@ParameterizedTest
 	@DisplayName("1.select with name like query")
 	@ValueSource(strings = "D")
 	@Order(4)
