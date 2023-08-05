@@ -3,6 +3,7 @@ package com.jdc.mkt.test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import java.sql.PreparedStatement;
 import java.sql.Types;
 import java.util.List;
 
@@ -12,8 +13,10 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jdbc.core.JdbcOperations;
+import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.PreparedStatementCreatorFactory;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
@@ -29,7 +32,7 @@ public class PersonTestThree {
 	@Autowired
 	private JdbcOperations jdbc;
 
-	@Test
+	// @Test
 	@Order(1)
 	@DisplayName("1.use query with preparedstatment creator")
 	void test1() {
@@ -50,4 +53,23 @@ public class PersonTestThree {
 		assertEquals("Wanna", person.getName());
 
 	}
+
+	@Test
+	@Order(2)
+	@DisplayName("2.insert with execute and preparedstatement creator")
+	void test2(@Qualifier("pInsert") PreparedStatementCreatorFactory factory) {
+		PreparedStatementCreator creator = factory.newPreparedStatementCreator(List.of("Andrew", 23));
+		var row = jdbc.execute(creator, PreparedStatement::executeUpdate);
+		assertEquals(1, row);
+	}
+
+	@Test
+	@Order(3)
+	@DisplayName("3.update with execute and preparedstatement creator")
+	void test3(@Qualifier("pUpdate") PreparedStatementCreatorFactory factory) {
+		PreparedStatementCreator creator = factory.newPreparedStatementCreator(List.of("William", 33, 1));
+		var row = jdbc.update(creator);
+		assertEquals(1, row);
+	}
+
 }

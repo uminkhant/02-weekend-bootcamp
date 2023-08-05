@@ -15,8 +15,8 @@ import com.jdc.mkt.dto.Person;
 import com.mysql.cj.jdbc.MysqlConnectionPoolDataSource;
 
 @Configuration
-@ComponentScan(basePackages = "com.jdc.mkt.dao")
-@PropertySource({ "/connection.properties", "/ddlPerson.properties" })
+@ComponentScan(basePackages = { "com.jdc.mkt.dao", "com.jdc.mkt.factory" })
+@PropertySource({ "/connection.properties", "/dmlPerson.properties" })
 public class ApplicationConfig {
 
 	@Value("${db.url}")

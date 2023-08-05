@@ -88,11 +88,8 @@ public class PersonTestTwo {
 	@DisplayName("4.using query method with RowMapper ")
 	@Order(4)
 	void test4() {
-
 		// var rowMapper = new BeanPropertyRowMapper<Person>(Person.class);
-
 		var list = jdbc.query("select * from person", rowMapper);
-
 		assertEquals(1, list.size());
 	}
 
