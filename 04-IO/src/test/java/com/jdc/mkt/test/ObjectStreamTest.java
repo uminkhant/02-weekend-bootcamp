@@ -46,7 +46,7 @@ public class ObjectStreamTest {
 		try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
 			String result = "";
 			int id = 0;
-			
+
 			if (readObject().size() > 0) {
 				students = readObject();
 				id = readObject().size();
@@ -79,6 +79,7 @@ public class ObjectStreamTest {
 		}
 	}
 
+	@SuppressWarnings({ "unchecked", "unchecked" })
 	List<Student> readObject() {
 		try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(file))) {
 			return (List<Student>) in.readObject();

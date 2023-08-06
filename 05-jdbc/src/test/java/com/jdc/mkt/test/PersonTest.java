@@ -6,7 +6,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
@@ -40,10 +39,9 @@ public class PersonTest {
 	void test1(String name, int age) {
 		try (Connection con = DriverManager.getConnection(URL, USER, PASSWORD);
 				Statement stmt = con.createStatement()) {
-			
-			int i = stmt.executeUpdate(String.
-					format("insert into person (name,age) values ('%s',%d)", name, age));
-			
+
+			int i = stmt.executeUpdate(String.format("insert into person (name,age) values ('%s',%d)", name, age));
+
 			assertEquals(1, i);
 
 		} catch (Exception e) {
@@ -58,8 +56,7 @@ public class PersonTest {
 	void test2(String name, int age) {
 		String sql = "insert into person(name,age) values (?,?)";
 
-		try (var con = DriverManager.getConnection(URL, USER, PASSWORD); 
-				var stmt = con.prepareStatement(sql)) {
+		try (var con = DriverManager.getConnection(URL, USER, PASSWORD); var stmt = con.prepareStatement(sql)) {
 
 			stmt.setString(1, name);
 			stmt.setInt(2, age);
